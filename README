@@ -1,0 +1,5 @@
+This program allows to 
+ 1. Input state of 4 in a row game
+ 2. Check if state is valid
+ 3. Display state
+ 4. Display game parameters
