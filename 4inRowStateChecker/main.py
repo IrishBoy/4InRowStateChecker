@@ -42,6 +42,8 @@ def inputColumn( height, columnNum) -> list():
                             row {cellRow + 1} starting from bottom,
                             possble values: R, Y, A'''
         curPoint = inputPossibleValue(text, POSSIBLE_VALUES)
+        if curPoint == "A":
+            curPoint = None
         curColumn.append(curPoint)
     return curColumn
 
@@ -65,8 +67,20 @@ def inputParams() -> GameParams:
 # Input of a size
 def inputSize() -> tuple:
     print("Input width and height")
-    width = inputInt("width")
-    height = inputInt("height")
+    while True:
+        width = inputInt("width")
+        if width >= 4:
+            break
+        else:
+            print("At least 4")
+            continue
+    while True:
+        height = inputInt("height")
+        if height >= 4:
+            break
+        else:
+            print("At least 4")
+            continue
     size = (width, height)
     return size 
 
