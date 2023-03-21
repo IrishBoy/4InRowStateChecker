@@ -64,7 +64,7 @@ class fourInRow():
 
     # Aggregate state checkings
     def checkState(self) -> ChekedStateResult:
-        print(f'Gravity check.... {self.checkGravity}')
+        print(f'Gravity check.... {self.checkGravity()}')
         print(f'Equal (or +-1) amount of chips... {self.checkEqualAmount()}')
         print(f'Moves order check.... {self.checkMovesOrder()}')
         print(f'Right amount of moves check...{self.checkRightAmountOfMoves()}')
@@ -76,8 +76,8 @@ class fourInRow():
     # Cheks that there is no flying chips
     def checkGravity(self) -> bool:
         for column  in self.position:
-            if (column.index("A") < column.index("R") or
-            column.index("A") < column.index("Y")):
+            if (column.index(None) < column.index("R") or
+            column.index(None) < column.index("Y")):
                 return False
         return True
     
